@@ -1,0 +1,96 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Cartes d'Identité</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Informations de la carte</h2>
+            <form id="identityForm">
+                <div class="form-group">
+                    <label>Photo :</label>
+                    <input type="file" id="photo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label>Nom complet :</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>Date de naissance :</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Lieu de naissance :</label>
+                    <input type="text" id="birthPlace" required>
+                </div>
+                <div class="form-group">
+                    <label>Nationalité :</label>
+                    <input type="text" id="nationality" required>
+                </div>
+                <div class="form-group">
+                    <label>Numéro d'identité :</label>
+                    <input type="text" id="idNumber" required>
+                </div>
+                <button type="submit">Générer la carte</button>
+            </form>
+        </div>
+
+        <div class="preview-section">
+            <h2>Aperçu de la carte</h2>
+            <div id="cardPreview">
+                <div class="id-card">
+                    <div class="card-header">
+                        <h3>CARTE D'IDENTITÉ</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="photo-placeholder" id="photoPreview">
+                            <span>Photo</span>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-row">
+                                <span class="label">Nom:</span>
+                                <span class="value" id="previewName">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Né(e) le:</span>
+                                <span class="value" id="previewBirthDate">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">À:</span>
+                                <span class="value" id="previewBirthPlace">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Nationalité:</span>
+                                <span class="value" id="previewNationality">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">N°:</span>
+                                <span class="value" id="previewIdNumber">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="signature">Signature du titulaire</div>
+                    </div>
+                </div>
+            </div>
+            <button id="exportPDF" class="export-btn">Exporter en PDF</button>
+        </div>
+    </div>
+
+    <!-- Ajouter après la fermeture de .container -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Conçu par <span class="designer-name">O. KOLOGO</span></p>
+            <p class="footer-copyright">© 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
